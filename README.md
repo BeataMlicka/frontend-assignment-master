@@ -1,4 +1,14 @@
-# Schibsted frontend task app
+# Short notes
+
+By the end of this task, I thought you might have expected it to be solved in a slightly simpler way without React, but it was too late to withdraw... However, I think this is a pretty good piece of code. A few things could be improved:
+- write the tests (unfortunately I didn't have more time)
+- push more logic to reducer
+- better styles
+- fix format date - on backend side :>
+
+I hope you will enjoy the code :)
+
+<!-- # Schibsted frontend task app
 
 This is a very basic npm project with default webpack setup.
 
@@ -27,4 +37,4 @@ The server has 2 endpoints:
 
 `/articles/fashion` - returns a list of articles from `fashion` category
 
-Be aware of backend errors!
+Be aware of backend errors! -->
