@@ -1,7 +1,7 @@
 import { FETCH_FASHION_ARTICLES, setFashionArticles } from "../actions"
 
 const initialState = {
-  articles: [],
+  articles: {},
 }
 
 export const fashionArticlesReducer = (state = initialState, action) => {

@@ -1,7 +1,7 @@
 import { FETCH_SPORTS_ARTICLES, setSportsArticles } from "../actions"
 
 const initialState = {
-  articles: [],
+  articles: {},
 }
 
 export const sportsArticlesReducer = (state = initialState, action) => {
