@@ -1,5 +1,8 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import PropTypes from 'prop-types'
+import isEmpty from 'lodash/isEmpty'
+
+import Article from './Article'
 
 import './ArticlesList.sass'
 
@@ -14,18 +17,31 @@ const ArticlesList = ({
     fetchSportsArticles()
   }, [])
 
+  const articles = useMemo(() => {
+    const articles = []
+    if (!isEmpty(fashion) && !isEmpty(sport)) return [...fashion.articles, ...sport.articles]
+
+    return []
+  }, [fashion, sport])
+
+  if (isEmpty(articles)) return null
   return (
     <div className='articles-list'>
-        Hello World
+        {articles.map(item => <Article article={item} />)}
     </div>
   )
 }
 
+ArticlesList.defaultProps = {
+  faschion: {},
+  sport: {},
+}
+
 ArticlesList.propTypes = {
-  fashionArticles: PropTypes.object.isRequired,
+  faschion: PropTypes.object.isRequired,
   fetchFashionArticles: PropTypes.func.isRequired,
   fetchSportsArticles: PropTypes.func.isRequired,
-  sportsArticles: PropTypes.object.isRequired,
+  sport: PropTypes.object.isRequired,
 }
 
 export default ArticlesList
