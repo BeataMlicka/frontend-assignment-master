@@ -4,6 +4,7 @@ import isEmpty from 'lodash/isEmpty'
 
 import TopBar from './TopBar'
 import Article from './Article'
+import Sidebar from './Sidebar'
 
 import './ArticlesList.sass'
 import { orderBy } from 'lodash'
@@ -60,7 +61,10 @@ const ArticlesList = ({
   return (
     <div className='articles-list'>
         <TopBar setOrder={setOrder} />
-        {articles.map(item => <Article key={item.id} article={item} />)}
+        <Sidebar />
+        <div className='articles-list__container'>
+            {articles.map(item => <Article key={item.id} article={item} />)}
+        </div>
     </div>
   )
 }
