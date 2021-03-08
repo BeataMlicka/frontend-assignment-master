@@ -6,11 +6,7 @@ import './Checkbox.sass'
 const Checkbox = ({ value, setCategory, text }) => (
   <div className='checkbox'>
     <div className='checkbox__box' onClick={() => setCategory(!value)}>
-      {
-        value
-          ? 'X'
-          : ''
-      }
+      { value ? 'X' : '' }
     </div>
     <div className='checkbox__text'>
       {text}

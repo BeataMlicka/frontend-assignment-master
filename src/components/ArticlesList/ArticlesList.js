@@ -43,8 +43,12 @@ const ArticlesList = ({
   }, [])
 
   const articles = useMemo(() => {
-    if (!isEmpty(fashion) && !isEmpty(sport)) {
-        const articlesList = [...fashion.articles, ...sport.articles].map((item) => {
+    let newArticlesList = []
+    if (fashion && fashion.articles && activeCategories.fashion) newArticlesList = [...newArticlesList, ...fashion.articles]
+    if (sport && sport.articles && activeCategories.sport) newArticlesList = [...newArticlesList, ...sport.articles]
+
+    if (!isEmpty(newArticlesList)) {
+        const sortedList = newArticlesList.map((item) => {
             return ({
                 ...item,
                 year: getDate(item.date).year,
@@ -53,19 +57,22 @@ const ArticlesList = ({
             })
         })
 
-        return orderBy(articlesList, ['year', 'month', 'day'], [order, order, order])
+        return orderBy(sortedList, ['year', 'month', 'day'], [order, order, order])
     }
 
     return []
-  }, [fashion, sport, order])
+  }, [activeCategories, fashion, order, sport])
 
-  if (isEmpty(articles)) return null
   return (
     <div className='articles-list'>
         <TopBar setOrder={setOrder} />
         <Sidebar activeCategories={activeCategories} setActiveCategories={setActiveCategories} />
         <div className='articles-list__container'>
-            {articles.map(item => <Article key={item.id} article={item} />)}
+            {
+              isEmpty(articles)
+                ? <h4>There are no articles :(</h4>
+                : articles.map(item => <Article key={item.id} article={item} />)
+            }        
         </div>
     </div>
   )
