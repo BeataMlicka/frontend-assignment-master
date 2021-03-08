@@ -20,18 +20,11 @@ module.exports = {
                     loader: 'babel-loader'
                 }
             }
-        ]
-        // loaders: [
-        //     {
-        //         test: /\.js$/,
-        //         exclude: /node_modules/,
-        //         loaders: ['babel-preset-es2015', 'babel-preset-stage-0', 'babel-preset-react']
-        //     }
-        // ]
+        ],
     },
     plugins: [
         new HtmlWebpackPlugin({
             template: './src/index.html'
-        })
+        }),
     ]
 };
