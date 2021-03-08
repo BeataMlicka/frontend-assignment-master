@@ -6,8 +6,8 @@ import { fetchSportsArticles } from '../../reducers/sportsArticlesReducer'
 import ArticlesList from './ArticlesList'
 
 const mapStateToProps = state => ({
-  fashionArticles: state.fashionArticlesReducer.articles,
-  sportsArticles: state.sportsArticlesReducer.articles,
+  fashion: state.fashionArticlesReducer.fashion[0],
+  sport: state.sportsArticlesReducer.sport,
 })
 
 const mapDispatchToProps = ({

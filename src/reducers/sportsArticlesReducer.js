@@ -1,13 +1,13 @@
 import { FETCH_SPORTS_ARTICLES, setSportsArticles } from "../actions"
 
 const initialState = {
-  articles: {},
+  sport: {},
 }
 
 export const sportsArticlesReducer = (state = initialState, action) => {
   switch(action.type){
     case FETCH_SPORTS_ARTICLES: {
-      return {...state, articles: [...state.articles, action.payload]}
+      return {...state, sport: [...state.sport, action.payload]}
     }
     default:
       return state
@@ -15,6 +15,7 @@ export const sportsArticlesReducer = (state = initialState, action) => {
 }
 
 export const fetchSportsArticles = () => async(dispatch) => {
-  const articles = await fetch('http://localhost:6010/articles/sports').then((res) => res.json())
+  const response = await fetch('http://localhost:6010/articles/sports')
+  const articles = await response.json()
   dispatch(setSportsArticles(articles))
 }

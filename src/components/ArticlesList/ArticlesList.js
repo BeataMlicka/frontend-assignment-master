@@ -4,10 +4,10 @@ import PropTypes from 'prop-types'
 import './ArticlesList.sass'
 
 const ArticlesList = ({
-    fashionArticles,
+    fashion,
     fetchFashionArticles,
     fetchSportsArticles,
-    sportsArticles,
+    sport,
 }) => {
   useEffect(() => {
     fetchFashionArticles()
