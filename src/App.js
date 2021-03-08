@@ -1,5 +1,13 @@
-// import React from 'react' // TODO
+import React from 'react'
 
-const App = () => null
+import ArticlesList from './components/ArticlesList'
+
+import './App.sass'
+
+const App = () => (
+  <div className='app'>
+      <ArticlesList />
+  </div>
+)
 
 export default App
