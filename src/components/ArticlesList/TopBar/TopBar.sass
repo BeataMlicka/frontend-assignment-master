@@ -1,0 +1,36 @@
+.top-bar
+    display: flex
+    justify-content: flex-end
+    color: #ffffff
+    width: 30%
+    font-weight: 600
+    .arrows
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        height: 30px
+        margin: 10px 0 10px 10px
+        &__arrow-up
+            width: 0 
+            height: 0
+            border-left: 6px solid transparent
+            border-right: 6px solid transparent
+            border-bottom: 12px solid #ffffff
+            transition: all .5s ease
+            cursor: pointer
+            &:hover
+                border-bottom: 12px solid #009b36
+
+        &__arrow-down
+            width: 0 
+            height: 0
+            border-left: 6px solid transparent
+            border-right: 6px solid transparent
+            border-top: 12px solid #ffffff
+            transition: all .5s ease
+            cursor: pointer
+            &:hover
+                border-top: 12px solid #009b36
+
+    @media (min-width: 1200px)
+        width: 100%
