@@ -35,6 +35,8 @@ const ArticlesList = ({
     sport,
 }) => {
   const [order, setOrder] = useState('desc')
+  const [activeCategories, setActiveCategories] = useState({ sport: true, fashion: true })
+
   useEffect(() => {
     fetchFashionArticles()
     fetchSportsArticles()
@@ -61,7 +63,7 @@ const ArticlesList = ({
   return (
     <div className='articles-list'>
         <TopBar setOrder={setOrder} />
-        <Sidebar />
+        <Sidebar activeCategories={activeCategories} setActiveCategories={setActiveCategories} />
         <div className='articles-list__container'>
             {articles.map(item => <Article key={item.id} article={item} />)}
         </div>

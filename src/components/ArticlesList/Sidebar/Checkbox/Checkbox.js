@@ -3,9 +3,9 @@ import PropTypes from 'prop-types'
 
 import './Checkbox.sass'
 
-const Checkbox = ({ value, text }) => (
+const Checkbox = ({ value, setCategory, text }) => (
   <div className='checkbox'>
-    <div className='checkbox__box'>
+    <div className='checkbox__box' onClick={() => setCategory(!value)}>
       {
         value
           ? 'X'
@@ -20,6 +20,7 @@ const Checkbox = ({ value, text }) => (
 
 Checkbox.propTypes = {
   value: PropTypes.bool.isRequired,
+  setCategory: PropTypes.func.isRequired,
   text: PropTypes.string.isRequired,
 }
 
