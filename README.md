@@ -4,7 +4,6 @@ By the end of this task, I thought you might have expected it to be solved in a 
 - write the tests (unfortunately I didn't have more time)
 - push more logic to reducer
 - better styles
-- fix format date - on backend side :>
 
 I hope you will enjoy the code :)
 
